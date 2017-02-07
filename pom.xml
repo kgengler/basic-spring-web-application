@@ -4,11 +4,17 @@
 	<groupId>com.kylegengler</groupId>
 	<artifactId>BasicWebApp</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
+	
+	<!-- Tell maven to build this as a war -->
 	<packaging>war</packaging>
 
 	<build>
+
+		<!-- Set the final artifact name of the project -->
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
+
+			<!-- Allow the build to pass without a web.xml -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-war-plugin</artifactId>
@@ -17,6 +23,8 @@
 					<failOnMissingWebXml>false</failOnMissingWebXml>
 				</configuration>
 			</plugin>
+
+			<!-- Compile for Java 8 -->
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
@@ -29,6 +37,7 @@
 		</plugins>
 	</build>
 
+	<!-- Project Dependencies -->
 	<dependencies>
 		<dependency>
 			<groupId>org.springframework</groupId>

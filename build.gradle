@@ -1,3 +1,5 @@
+
+// Build a war
 apply plugin: 'war'
 
 group = 'com.kylegengler'
@@ -5,9 +7,11 @@ version = '1.0.0'
 
 description = "A Basic Spring Application"
 
+// Build for Java 8
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
 
+// Set the final name for the artifact
 war {
     archiveName 'BasicWebApp.war'
 }
@@ -16,6 +20,7 @@ repositories {
      mavenCentral()
 }
 
+// Declare the project dependencies
 dependencies {
     compile group: 'org.springframework', name: 'spring-webmvc', version:'4.3.6.RELEASE'
     compile group: 'org.thymeleaf', name: 'thymeleaf-spring4', version:'3.0.3.RELEASE'
